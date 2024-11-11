@@ -11,7 +11,7 @@ import time
 import random
 
 # serialize json messages (KafkaProducer expects message data to be in bytes format)
-producer = KafkaProducer(bootstrap_servers='localhost:9092', value_serialize=lambda v: json.dumps(v).encode('utf-8'))
+producer = KafkaProducer(bootstrap_servers='localhost:9092', value_serializer=lambda v: json.dumps(v).encode('utf-8'))
 
 # example product types and actions by customers
 productTypes = ["clothing", "shoes", "electronics", "food", "beverages", "candles", "skincare"]
